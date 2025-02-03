@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>Добро пожаловать, {{ current_user.name }}!</h1>
+<h2>Список задач:</h2>
+
+<input type="text" id="taskInput" placeholder="Введите задачу..." autofocus form-type="add-task">
+<button id="addTaskBtn">Отправить</button>
+
+{% if tasks %}
+    <div id="taskList">
+        {% for task in tasks %}
+            <div id="task-wrapper" class="task-wrapper">
+                <input id="task{{ task.id }}"
+                    type="checkbox"
+                    name="task"
+                    value="{{ task.id }}"
+                    {% if task.completed %}
+                        checked="yes"
+                    {% endif%}
+                    autocomplete="off">
+
+                <label {% if task.completed %}class="text-decoration-line-through text-success"{% endif %} for="task{{ task.id }}">
+                    {{ task.task }}
+                </label>
+                <div id="trash-can-{{ task.id }}" class="trash-can">
+                    <img src="{{ url_for('static', filename='images/trash-can.svg') }}" alt="Delete">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Нет задач</p>
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/add_task.js') }}"></script>
+<script src="{{ url_for('static', filename='js/edit_task.js') }}"></script>
+<script src="{{ url_for('static', filename='js/delete_task.js') }}"></script>
+{% endblock %}
