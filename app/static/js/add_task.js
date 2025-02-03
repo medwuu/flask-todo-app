@@ -11,8 +11,8 @@ $(document).ready(function() {
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ form_type: "add", task: taskText }),
-            // BUG: при добавлении первой таски, она не отображается через ajax
             success: function(response) {
+                if ($(".task-wrapper").length == 0) $(".no-tasks").addClass("d-none")
                 var newTask = `
                     <div id="task-wrapper" class="task-wrapper">
                         <input id="task${response.id}"
