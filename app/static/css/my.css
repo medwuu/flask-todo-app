@@ -1,8 +1,87 @@
-.task-wrapper {
-    max-width: 800px;
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+span.user-name {
+    margin-right: 0;
+}
+
+.todo-wrapper {
+    max-width: 750px;
     margin: 0 auto;
+    padding-bottom: 20px;
+    background-color: var(--light-gray);
+    border: 0;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.add-task {
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-task>input {
+    padding: 5px 10px;
+    width: 77%;
+    background-color: var(--white);
+    border: 3px solid var(--blue);
+    border-radius: 10px;
+}
+.add-task>input:focus {
+    outline: none;
+}
+.add-task>button {
+    padding: 5px;
+    width: 20%;
+    color: var(--white);
+    font-weight: 500;
+    background-color: var(--blue);
+    border: 0;
+    border-radius: 10px;
+
+}
+
+.task-list {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+    max-height: 50vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.task-wrapper {
+    background-color: var(--white);
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+    border-radius: 10px;
+}
+
+.task-wrapper-left {
+    width: 100%;
+    display: contents;
+}
+.task-wrapper-left>input {
+    cursor: pointer;
+}
+.task-wrapper-left>label {
+    width: 90%;
+    cursor: pointer;
+    word-break: break-all;
 }
 
 .trash-can {
     width: 1em;
+    cursor: pointer;
+    user-select: none;
+}
+.trash-can>img {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(49%) saturate(5901%) hue-rotate(219deg) brightness(98%) contrast(92%);
 }

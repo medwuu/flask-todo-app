@@ -1,8 +1,25 @@
+:root {
+    --blue: #646ff0;
+    --white: #f8f8ff;
+    --light-gray: #cccdde;
+    --gray: #646681;
+    --dark-gray: #444661;
+}
+
 body {
-    background-color: #181a1b;
-    color: #fff
+    min-height: 100vh;
+    background-color: var(--white);
+    color: var(--gray);
+    font-family: "Montserrat";
 }
 
 .header-img {
     width: 50px;
+}
+
+.user-name {
+    display: inline;
+    margin-right: 10%;
+    color: var(--blue);
+    font-weight: 700;
 }

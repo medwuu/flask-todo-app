@@ -15,15 +15,18 @@ $(document).ready(function() {
                 if ($(".task-wrapper").length == 0) $(".no-tasks").addClass("d-none")
                 var newTask = `
                     <div id="task-wrapper" class="task-wrapper">
-                        <input id="task${response.id}"
-                            type="checkbox"
-                            name="task"
-                            value="${response.id}"
-                            autocomplete="off">
+                        <div class="task-wrapper-left">
+                            <input id="task${response.id}"
+                                type="checkbox"
+                                name="task"
+                                value="${response.id}"
+                                autocomplete="off">
 
-                        <label for="task${response.id}">
-                            ${response.task}
-                        </label>
+                            <label for="task${response.id}">
+                                <!--- FIXME: html инъекция --->
+                                ${response.task}
+                            </label>
+                        </div>
                         <div id="trash-can-${response.id}" class="trash-can">
                             <img src="/static/images/trash-can.svg" alt="Delete">
                         </div>
