@@ -28,7 +28,7 @@
                         {% endif%}
                         autocomplete="off">
 
-                    <label {% if task.completed %}class="text-decoration-line-through text-success"{% endif %} for="task{{ task.id }}">
+                    <label {% if task.completed %}class="text-decoration-line-through text-success fw-light"{% endif %} for="task{{ task.id }}">
                         {{ task.task }}
                     </label>
                 </div>
@@ -40,8 +40,9 @@
         <p class="no-tasks{% if tasks %} d-none{% endif %}">Нет задач</p>
     </div>
 </div>
+{% endblock %}
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+{% block scripts %}
 <script src="{{ url_for('static', filename='js/add_task.js') }}"></script>
 <script src="{{ url_for('static', filename='js/edit_task.js') }}"></script>
 <script src="{{ url_for('static', filename='js/delete_task.js') }}"></script>

@@ -14,7 +14,7 @@ $(document).ready(function() {
             success: function(response) {
                 if ($(".task-wrapper").length == 0) $(".no-tasks").addClass("d-none")
                 var newTask = `
-                    <div id="task-wrapper" class="task-wrapper">
+                    <div id="task-wrapper" class="task-wrapper" style="display: none;">
                         <div class="task-wrapper-left">
                             <input id="task${response.id}"
                                 type="checkbox"
@@ -32,6 +32,7 @@ $(document).ready(function() {
                         </div>
                     </div>`;
                 $("#taskList").append(newTask);
+                $(".task-wrapper").last().fadeIn();
                 $("#taskInput").val("");
             },
             error: function() {

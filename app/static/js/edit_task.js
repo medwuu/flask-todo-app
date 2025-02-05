@@ -13,7 +13,7 @@ $(document).ready(function() {
                 completed: completed
             }),
             success: function(response) {
-                $("#task"+response.id).siblings("label").toggleClass("text-decoration-line-through text-success")
+                $("#task"+response.id).siblings("label").toggleClass("text-decoration-line-through text-success fw-light")
             },
             error: function() {
                 alert("Ошибка при добавлении задачи");
