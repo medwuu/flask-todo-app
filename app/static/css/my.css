@@ -7,6 +7,24 @@ span.user-name {
     margin-right: 0;
 }
 
+.progress {
+    background-color: var(--light-gray);
+    max-width: 750px;
+    margin: 0 auto;
+    height: 2em;
+    position: relative;
+    margin-bottom: 3em;
+}
+
+.progress-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 2;
+}
+
 .todo-wrapper {
     max-width: 750px;
     margin: 0 auto;

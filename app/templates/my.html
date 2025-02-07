@@ -6,7 +6,18 @@
 
 {% block body %}
 <h1>Добро пожаловать, <span class="user-name">{{ current_user.name }}</span>!</h1>
-<!-- TODO: прогресс бар выполнения тасков -->
+<div class="progress">
+    {% set total_tasks = tasks|length %}
+    {% set completed_tasks = tasks | selectattr("completed", "equalto", True) | list | length %}
+    {% if total_tasks > 0 %}
+        {% set percent_completed = ((completed_tasks / total_tasks) * 100)| round | int %}
+    {% else %}
+        {% set percent_completed = 0 %}
+    {% endif %}
+
+    <div class="progress-bar" role="progressbar" style="width: {{ percent_completed }}%"></div>
+    <div class="progress-bar-inner" style="{% if percent_completed > 48 %}color: var(--white);{% endif %}">{{ percent_completed }}%</div>
+</div>
 <h2>Список задач:</h2>
 
 <div class="todo-wrapper">
