@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "batisteo.vscode-django",
+        "ecmel.vscode-html-css",
+        "formulahendry.code-runner",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "wholroyd.jinja"
+    ]
+}
