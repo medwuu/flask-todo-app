@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>Настройки:</h1>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <p class="alert {% if category == 'danger' %}alert-warning{% else %}alert-success{% endif %}">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<form action="" method="post">
+    <div class="form-group">
+        <label>Старый пароль:</label>
+        <input type="password" class="form-control" name="old-password" placeholder="Старый пароль">
+    </div>
+    <div class="form-group">
+        <label>Новый пароль:</label>
+        <input type="password" class="form-control" name="new-password" placeholder="Новый пароль">
+    </div>
+    <div class="form-group">
+        <label>Повторите новый пароль:</label>
+        <input type="password" class="form-control" name="repeat-password" placeholder="Повторите новый пароль">
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
+{% endblock %}
