@@ -26,7 +26,15 @@
         <button id="addTaskBtn">Добавить</button>
     </div>
 
-    <div id="taskList" class="task-list">
+    <div class="sort">
+        Сначала:
+        <select name="sort" id="sortSelect">
+            <option value="old" selected>старые</option>
+            <option value="new">новые</option>
+        </select>
+    </div>
+
+    <div id="taskList" class="task-list d-flex flex-column{% if request.cookies.get('sort_by') == 'new' %}-reverse{% endif %}">
         {% for task in tasks %}
             <div id="task-wrapper" class="task-wrapper">
                 <div class="task-wrapper-left">
@@ -57,4 +65,5 @@
 <script src="{{ url_for('static', filename='js/add_task.js') }}"></script>
 <script src="{{ url_for('static', filename='js/edit_task.js') }}"></script>
 <script src="{{ url_for('static', filename='js/delete_task.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sort.js') }}"></script>
 {% endblock %}

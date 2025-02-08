@@ -59,14 +59,22 @@ span.user-name {
     background-color: var(--blue);
     border: 0;
     border-radius: 10px;
+}
 
+.sort {
+    text-align: right;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.sort option {
+    font-family: 'Montserrat';
 }
 
 .task-list {
     max-width: 600px;
     margin: 0 auto;
     font-size: 18px;
-    max-height: 50vh;
+    max-height: 40vh;
     overflow: scroll;
     scrollbar-width: none;
 }
@@ -74,7 +82,7 @@ span.user-name {
 .task-wrapper {
     background-color: var(--white);
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

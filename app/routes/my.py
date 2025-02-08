@@ -1,4 +1,4 @@
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, make_response
 from app import app, db
 from app.models import Tasks
 from flask_login import login_required, current_user
@@ -9,6 +9,12 @@ from flask_login import login_required, current_user
 def my():
     if request.method == 'POST':
         data = request.get_json()
+
+        # сортировка тасков
+        if data['form_type'] == "sort":
+            response = make_response((render_template('my.html')))
+            response.set_cookie('sort_by', data['sort_by'])
+            return response
 
         # добавление таски
         if data['form_type'] == "add":

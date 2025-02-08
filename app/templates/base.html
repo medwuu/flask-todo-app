@@ -31,7 +31,6 @@
                 <a href="{{ url_for('login') }}" class="btn btn-outline-primary me-2">Вход</a>
                 <a href="{{ url_for('register') }}" class="btn btn-primary">Регистрация</a>
             {% else %}
-                <!-- TODO: настройки пользователя -->
                 <a href="{{ url_for('settings') }}" class="user-name">{{ current_user.name }}</a>
                 <a href="{{ url_for('logout') }}" class="btn btn-primary">Выход</a>
             {% endif %}
