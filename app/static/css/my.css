@@ -66,7 +66,15 @@ span.user-name {
     max-width: 600px;
     margin: 0 auto;
 }
-.sort option {
+
+.form-select {
+    display: inline;
+    width: initial;
+    background-color: var(--light-gray);
+    border: 0;
+}
+
+.form-select option {
     font-family: 'Montserrat';
 }
 
