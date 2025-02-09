@@ -13,6 +13,8 @@ body {
     font-family: "Montserrat";
 }
 
+
+/* Header */
 .header-img {
     width: 50px;
 }
@@ -22,4 +24,28 @@ body {
     margin-right: 10%;
     color: var(--blue);
     font-weight: 700;
+}
+
+
+/* Main */
+.main {
+    min-height: 100vh;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section h1 {
+    margin-bottom: 2em;
+}
+
+.section h2 {
+    font-weight: 200;
+}
+
+section img {
+    max-width: 100%;
 }

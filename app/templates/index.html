@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
-
 {% block body %}
-<h1>Главная страница</h1>
+<section class="section">
+    <div class="section-left">
+        <h1>TODO List – планировщик задач</h1>
+        <h2>Упростите себе жизнь, используя бесплатный менеджер задач!</h2>
+    </div>
+    <div class="section-right">
+        <img src="{{ url_for('static', filename='images/preview.png') }}" alt="">
+    </div>
+</section>
 {% endblock %}
